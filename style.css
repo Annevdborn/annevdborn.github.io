@@ -1154,7 +1154,30 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
   margin: 0 auto;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.laptop-link-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.laptop-link {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1925AA;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.laptop-link:hover {
+  opacity: 1;
 }
 
 .macbook-iframe {
