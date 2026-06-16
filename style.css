@@ -790,6 +790,265 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
   border-radius: 12px;
 }
 
+/* ── Device switcher ── */
+.apparaat-sectie {
+  position: relative;
+  height: 280vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.apparaat-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.apparaat-kiezer {
+  display: flex;
+  gap: 4px;
+  background: rgba(25, 37, 170, 0.07);
+  border-radius: 100px;
+  padding: 4px;
+}
+
+.apparaat-btn {
+  padding: 0.4rem 1.3rem;
+  border: none;
+  background: transparent;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: rgba(25, 37, 170, 0.45);
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.apparaat-btn--actief {
+  background: #1925AA;
+  color: #fff;
+}
+
+.apparaat-schermen {
+  position: relative;
+  width: 100%;
+  display: grid;
+}
+
+.apparaat-wrap {
+  grid-area: 1 / 1;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.apparaat-wrap--actief {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.apparaat-scroll-img {
+  width: 100%;
+  display: block;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+/* iPhone */
+.iphone-frame {
+  position: relative;
+  width: min(240px, 38vw);
+  aspect-ratio: 9 / 19.5;
+  background: #1c1c1e;
+  border-radius: 44px;
+  box-shadow:
+    0 0 0 2px #3a3a3c,
+    inset 0 0 0 1px #444,
+    0 40px 100px rgba(0, 0, 0, 0.28);
+}
+
+.iphone-island {
+  position: absolute;
+  top: 2.2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 3.2%;
+  background: #0a0a0a;
+  border-radius: 100px;
+  z-index: 2;
+}
+
+.iphone-knop-zij {
+  position: absolute;
+  right: -3px;
+  top: 22%;
+  width: 3px;
+  height: 9%;
+  background: #2c2c2e;
+  border-radius: 0 2px 2px 0;
+}
+
+.iphone-knop-vol-1 {
+  position: absolute;
+  left: -3px;
+  top: 20%;
+  width: 3px;
+  height: 6%;
+  background: #2c2c2e;
+  border-radius: 2px 0 0 2px;
+}
+
+.iphone-knop-vol-2 {
+  position: absolute;
+  left: -3px;
+  top: 28%;
+  width: 3px;
+  height: 6%;
+  background: #2c2c2e;
+  border-radius: 2px 0 0 2px;
+}
+
+.iphone-scherm {
+  position: absolute;
+  inset: 1.5% 2%;
+  background: #fff;
+  border-radius: 36px;
+  overflow: hidden;
+}
+
+/* iPad (landscape) */
+.ipad-frame {
+  position: relative;
+  width: min(780px, 92vw);
+  aspect-ratio: 4 / 3;
+  background: #1c1c1e;
+  border-radius: 36px;
+  box-shadow:
+    0 0 0 2px #3a3a3c,
+    inset 0 0 0 1px #444,
+    0 40px 100px rgba(0, 0, 0, 0.28);
+}
+
+.ipad-camera {
+  position: absolute;
+  right: 1.6%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #2c2c2e;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.ipad-knop-zij {
+  position: absolute;
+  top: -3px;
+  right: 18%;
+  width: 7%;
+  height: 3px;
+  background: #2c2c2e;
+  border-radius: 2px 2px 0 0;
+}
+
+.ipad-knop-vol {
+  position: absolute;
+  top: -3px;
+  right: 30%;
+  width: 4%;
+  height: 3px;
+  background: #2c2c2e;
+  border-radius: 2px 2px 0 0;
+}
+
+.ipad-scherm {
+  position: absolute;
+  inset: 6% 5%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* MacBook */
+.macbook-frame {
+  width: min(820px, 94vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.25));
+}
+
+.macbook-lid {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #1c1c1e;
+  border-radius: 10px 10px 0 0;
+  outline: 1.5px solid #3a3a3c;
+  overflow: hidden;
+}
+
+.macbook-camera {
+  position: absolute;
+  top: 2.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #3a3a3c;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.macbook-scherm {
+  position: absolute;
+  top: 6%;
+  left: 1%;
+  right: 1%;
+  bottom: 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.macbook-basis {
+  width: 110%;
+  height: 13px;
+  background: #242424;
+  border-radius: 0 0 8px 8px;
+  outline: 1px solid #3a3a3c;
+  position: relative;
+}
+
+.macbook-basis::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 28%;
+  width: 44%;
+  height: 5px;
+  background: #1a1a1a;
+  border-radius: 0 0 5px 5px;
+}
+
+@media (max-width: 768px) {
+  .apparaat-sectie { height: 200vh; }
+  .ipad-frame { width: min(400px, 92vw); border-radius: 22px; }
+  .iphone-frame { width: min(180px, 50vw); }
+  .macbook-frame { width: min(360px, 92vw); }
+}
+
 .project-breedte-foto {
   width: 100%;
   aspect-ratio: 16 / 9;
