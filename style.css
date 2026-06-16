@@ -666,8 +666,9 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
   transform: scale(1.06);
 }
 
-/* ── Project pagina ── */
-.project-body-page {
+/* ── Project pagina & werkpagina ── */
+.project-body-page,
+.werkpagina-page {
   background: #ffffff;
 }
 
