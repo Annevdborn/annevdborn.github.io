@@ -84,50 +84,16 @@
       </div>
     </div>
 
-    <div class="apparaat-sectie" id="apparaatOuter">
-      <div class="apparaat-sticky">
-        <div class="apparaat-kiezer">
-          <button class="apparaat-btn" data-apparaat="iphone">iPhone</button>
-          <button class="apparaat-btn apparaat-btn--actief" data-apparaat="ipad">iPad</button>
-          <button class="apparaat-btn" data-apparaat="macbook">MacBook</button>
-        </div>
-        <div class="apparaat-schermen">
-
-          <div class="apparaat-wrap" data-apparaat="iphone">
-            <div class="iphone-frame">
-              <div class="iphone-island"></div>
-              <div class="iphone-knop-zij"></div>
-              <div class="iphone-knop-vol-1"></div>
-              <div class="iphone-knop-vol-2"></div>
-              <div class="iphone-scherm">
-                <img src="images/publiccityjazz/iphone1314.png" class="apparaat-scroll-img" alt="Public City Jazz iPhone">
-              </div>
+    <div class="scroll-laptop-outer" id="laptopOuter">
+      <div class="scroll-laptop-inner">
+        <div class="macbook-frame">
+          <div class="macbook-lid">
+            <div class="macbook-camera"></div>
+            <div class="macbook-scherm">
+              <img src="images/publiccityjazz/MacBookPro16.png" class="laptop-scroll-img" id="laptopScrollImg" alt="Public City Jazz website">
             </div>
           </div>
-
-          <div class="apparaat-wrap apparaat-wrap--actief" data-apparaat="ipad">
-            <div class="ipad-frame">
-              <div class="ipad-camera"></div>
-              <div class="ipad-knop-zij"></div>
-              <div class="ipad-knop-vol"></div>
-              <div class="ipad-scherm">
-                <img src="images/publiccityjazz/iPadPro11.png" class="apparaat-scroll-img" alt="Public City Jazz iPad">
-              </div>
-            </div>
-          </div>
-
-          <div class="apparaat-wrap" data-apparaat="macbook">
-            <div class="macbook-frame">
-              <div class="macbook-lid">
-                <div class="macbook-camera"></div>
-                <div class="macbook-scherm">
-                  <img src="images/publiccityjazz/MacBookPro16.png" class="apparaat-scroll-img" alt="Public City Jazz MacBook">
-                </div>
-              </div>
-              <div class="macbook-basis"></div>
-            </div>
-          </div>
-
+          <div class="macbook-basis"></div>
         </div>
       </div>
     </div>
@@ -246,22 +212,11 @@
   })();
   </script>
   <script>
-  // Device switcher + scroll-driven animation
+  // Scroll-driven MacBook animation
   (function () {
-    const outer = document.getElementById('apparaatOuter');
-    if (!outer) return;
-
-    const btns  = outer.querySelectorAll('.apparaat-btn');
-    const wraps = outer.querySelectorAll('.apparaat-wrap');
-
-    btns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const target = btn.dataset.apparaat;
-        btns.forEach(b  => b.classList.toggle('apparaat-btn--actief',  b.dataset.apparaat === target));
-        wraps.forEach(w => w.classList.toggle('apparaat-wrap--actief', w.dataset.apparaat === target));
-        update();
-      });
-    });
+    const outer = document.getElementById('laptopOuter');
+    const img   = document.getElementById('laptopScrollImg');
+    if (!outer || !img) return;
 
     function update() {
       const rect      = outer.getBoundingClientRect();
@@ -271,10 +226,6 @@
       const maxScroll = outerH - viewH;
       const progress  = Math.max(0, Math.min(1, scrolled / maxScroll));
 
-      const activeWrap = outer.querySelector('.apparaat-wrap--actief');
-      if (!activeWrap) return;
-      const img = activeWrap.querySelector('.apparaat-scroll-img');
-      if (!img) return;
       const scherm   = img.parentElement;
       const natRatio = img.naturalHeight && img.naturalWidth
         ? img.naturalHeight / img.naturalWidth
@@ -284,9 +235,7 @@
       img.style.transform = `translateY(-${progress * maxTrans}px)`;
     }
 
-    outer.querySelectorAll('.apparaat-scroll-img').forEach(img => {
-      img.addEventListener('load', update);
-    });
+    img.addEventListener('load', update);
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update, { passive: true });
     update();
