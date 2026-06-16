@@ -983,7 +983,7 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
 
 .werkpagina-heading {
   font-family: 'Anton', sans-serif;
-  font-size: clamp(12rem, 20vw, 22rem) !important;
+  font-size: clamp(12rem, 20vw, 22rem);
   color: var(--blue);
   white-space: nowrap;
   line-height: 0.9;
@@ -1999,4 +1999,27 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
   .skill-layout { grid-template-columns: 1fr; gap: 2rem; }
   .overmij-cv-body { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
   .testimonials-band { margin: 3rem 0; border-radius: 12px; }
+
+  /* Hero hoogte — iOS Safari telt browser-chrome mee bij 100vh */
+  .hero {
+    height: auto;
+    min-height: 100svh;
+  }
+
+  /* 3-koloms fotorij → 2 kolommen op mobiel */
+  .project-foto-rij--drie {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* iOS Safari zoomt automatisch in op inputs kleiner dan 16px */
+  .form-veld input,
+  .form-veld textarea {
+    font-size: 16px;
+  }
+
+  /* Grotere taptarget voor hamburger */
+  .nav-menu {
+    padding: 8px;
+    margin: -8px;
+  }
 }
