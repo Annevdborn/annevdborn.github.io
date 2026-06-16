@@ -709,9 +709,24 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
 }
 
 .project-tekst-blok {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  padding-top: 2rem;
+  border-top: 1px dashed rgba(25, 37, 170, 0.2);
+}
+
+.project-tekst-blok-teksten {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .project-tekst-blok {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .project-body {
