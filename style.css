@@ -1148,6 +1148,22 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
   cursor: zoom-in;
 }
 
+/* ── Laptop iframe sectie ── */
+.laptop-sectie {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.macbook-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
 /* ── Miro embed ── */
 .miro-sectie {
   max-width: 1100px;
