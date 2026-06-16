@@ -1158,10 +1158,11 @@ a.werkpagina-item:hover .werkpagina-img-zoom {
 }
 
 .macbook-iframe {
-  width: 100%;
-  height: 100%;
+  width: 1440px;
+  height: 900px;
   border: none;
   display: block;
+  transform-origin: top left;
 }
 
 /* ── Miro embed ── */
