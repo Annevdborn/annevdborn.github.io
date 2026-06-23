@@ -20,9 +20,19 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ── Page fade-in ── */
 body {
   animation: pageFadeIn 0.5s ease 0.05s both;
+}
+
+/* ── Nav entrance ── */
+.nav {
+  animation: navSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
 }
 
 /* ── Hero entrance ── */
@@ -32,6 +42,15 @@ body {
 
 .hero-bottom {
   animation: heroSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+}
+
+/* ── Project page title entrance ── */
+.project-hero-titel {
+  animation: heroSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.project-terug-link {
+  animation: heroSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
 }
 
 /* ── Scroll reveal ── */
@@ -68,7 +87,13 @@ body {
   z-index: 99999;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s;
+}
+
+#cursor-dot.hover {
+  width: 48px;
+  height: 48px;
+  background: #1925AA;
 }
 
 #cursor-dot.visible {

@@ -10,6 +10,12 @@ document.addEventListener('mousemove', (e) => {
 
 document.addEventListener('mouseleave', () => dot.classList.remove('visible'));
 
+// Cursor grows on interactive elements
+document.querySelectorAll('a, button, .werk-item, .werkpagina-item, .skill-item, .project-bekijk-ook-item').forEach(el => {
+  el.addEventListener('mouseenter', () => dot.classList.add('hover'));
+  el.addEventListener('mouseleave', () => dot.classList.remove('hover'));
+});
+
 function fitText(el) {
   if (!el) return;
   el.style.fontSize = '100px';
@@ -99,7 +105,9 @@ const revealSelectors = [
   '.werk-title-wrap',
   '.laten-cta', '.laten-space', '.footer',
   '.project-body', '.project-breedte-foto',
-  '.project-foto-rij', '.project-bekijk-ook'
+  '.project-foto-rij', '.project-bekijk-ook',
+  '.project-tekst-blok', '.apparaat-sectie',
+  '.scroll-laptop-outer'
 ].join(', ');
 
 document.querySelectorAll(revealSelectors).forEach(el => {
